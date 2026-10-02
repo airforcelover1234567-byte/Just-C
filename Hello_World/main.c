@@ -1,7 +1,8 @@
 #include <stdio.h>
-int main(){
+int main()
+{
 
-// This is my first program :)
+    // This is my first program :)
 
     printf("I like Biriyani!\n");
 
