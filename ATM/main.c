@@ -5,42 +5,57 @@
 void statement(){
     printf("\n1. Check Balance \n2. Deposit Money \n3. Withdraw Money \n4.Change PIN \n5.Exit");
 }
+void reuseatm(int reuse){
+    printf("\nDo you want to use the ATM again?\n 1.Yes  2.No  ");
+    scanf("%d",reuse);
+}
 
 int main(){
     int PIN=1977;
     int mypin=0;
     int choice=0;
     float balance = 100000;
-    char retry1[5]="";
+    int retry=0;
+    int chance=0;
+    int reuse=0;
+
+    do{
     printf("Enter your PIN: ");
     scanf(" %d",&mypin);
 
     if(mypin==PIN){
         printf("Login Successfull!");
+        do{
         statement();
         printf("\nChoose your option: ");
         scanf(" %d",&choice);
+        
+        
         switch(choice){
+            
     case 1:
     printf("\nYour balance is %.2f",balance);
+    reuseatm(reuse);
     break;
 
     case 2:
     float deposit=0.0f;
     printf("Enter the amount you want to deposit: ");
     scanf(" %f",&deposit);
-    float balancedep=balance+deposit;
+    balance=balance+deposit;
 
-    printf("\nYour balance after deposition is %.2f",balancedep);
+    printf("\nYour balance after deposition is %.2f",balance);
+    reuseatm(reuse);
     break;
 
     case 3:
     float withdraw=0.0f;
     printf("Enter the amount you want to withdraw");
     scanf(" %f",&withdraw);
-    float balancewit=balance-withdraw;
+    balance=balance-withdraw;
 
-    printf("\nYour balance after withdrawal is %.2f",balancewit);
+    printf("\nYour balance after withdrawal is %.2f",balance);
+    reuseatm(reuse);
     break;
 
     case 4:
@@ -50,28 +65,38 @@ int main(){
     printf("\nConfirm the new pin: ");
     scanf(" %d",&newpin);
     mypin=newpin;
+    reuseatm(reuse);
     break;
 
     case 5:
     exit(EXIT_SUCCESS);
     break;
+        
 
     default:
     printf("Enter a proper function");
+        
+}
+}while(reuse==1);
         }
-    }
+
     else{
-        printf("Access Denied");
-        mypin++;
-        printf("\nDo you want to try again(1.yes 2.no): ");
-        fgets(retry1, sizeof(retry1), stdin);
-        retry1[strlen(retry1)-1] ='\0';
-            if(retry1=="yes"){
-                
-            }
+        printf("\nDo you want to retry?\n 1.Yes 2.No ");
+        scanf(" %d",&retry);
+        
+         chance++;
+   if(chance==3){
+    printf("You have used all of your attempts!");
+    exit(EXIT_SUCCESS);
+    }
+}
+}while(retry==1);
+    
+
+    
+return 0;
     }
     
 
 
 
-    }

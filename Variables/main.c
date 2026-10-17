@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#define PI 3.14
 
 //variables
 
@@ -7,9 +8,11 @@ int main(){
 
 int age = 14;
 int year = 2026;
+const int life=13;
+printf(" my backslash \\ %f \a", PI);
 
 
-printf("The year is %d\n", year);
+printf("\nThe year is %d\n", year);
 printf("You are %d years old\n",age);
 
 float Gpa = 2.5;
