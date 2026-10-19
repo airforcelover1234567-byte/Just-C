@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 void statement(){
     printf("\n1. Check Balance \n2. Deposit Money \n3. Withdraw Money \n4.Change PIN \n5.Exit");
