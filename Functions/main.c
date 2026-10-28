@@ -1,21 +1,19 @@
 #include <stdio.h>
 
-int sum(int a, int b, int c){
-    return a+b;
+void printing(){
+    printf("PROGRAM TO ADD 2 NUMBERS!");
 }
-
-void printstar(int n){
-    for(int i=0; i<10; i++){
-        printf("%c","*");
-    }
+float sum(float num1, float num2){
+    return num1+num2;
 }
-
 int main(){
-    int a,b,c;
-    a=9;
-    b=81;
-    c=sum(a,b,c);
-    printf("%d",c);
-    printstar(7);
+    float num1,num2;
+    printf("Enter the first number: \n");
+    scanf("%f",&num1);
+    printf("Enter the second number: \n");
+    scanf("%f",&num2);
+    printing();
+    printf("The sum is %.2f\n", sum(num1,num2));
+    
     return 0;
 }
